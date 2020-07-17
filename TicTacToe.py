@@ -22,13 +22,6 @@ class TicTacToe:
                 if(j == ' '):
                     return 'Game not finished'
         return 'Draw'
-    
-    def convert(self, x, y):
-        if y == 1:
-            y += 2
-        elif y == 3:
-            y -= 2
-        return y, x
 
     def user(self, chr):
         coordinates = input("Enter the coordinates: ")
@@ -44,7 +37,7 @@ class TicTacToe:
             print("Coordinates should be from 1 to 3!")
             self.user(chr)
         else:
-            i, j = self.convert(int(x), int(y))
+            i, j = int(x), int(y)
             if self.grid[i-1][j-1] != ' ':
                 print("This cell is occupied! Choose another one!")
                 self.user(chr)
